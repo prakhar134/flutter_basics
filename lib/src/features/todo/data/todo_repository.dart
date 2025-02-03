@@ -1,18 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sample/src/api/api_client.dart';
 import 'package:sample/src/api/services/todo_api.dart';
 import 'package:sample/src/features/todo/domain/todos_model.dart';
 part 'todo_repository.g.dart';
-
-class TodoRepository {
-  final ApiClient apiClient;
-  TodoRepository(this.apiClient);
-  final baseUrl = "https://jsonplaceholder.typicode.com";
-  Future getTodos() async{
-    final res = await apiClient.getData(baseUrl);
-  }
-}
 
 @riverpod
 class Todos extends _$Todos {
@@ -40,6 +30,3 @@ Future<List<TodosModelFromAPI>> fetchTodos(FetchTodosRef ref) async {
   ];
 return todos;
 }
-
-
-
