@@ -17,6 +17,7 @@ class Todo extends ConsumerWidget {
         title: const Text("Todo"),
       ),
       body: SingleChildScrollView(
+          physics: ScrollPhysics(),
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
@@ -57,6 +58,7 @@ class Todo extends ConsumerWidget {
                 switch (apiTodos) {
                   AsyncData(:final value) => Expanded(
                     child: ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: value.length,
@@ -76,4 +78,5 @@ class Todo extends ConsumerWidget {
     );
   }
 }
+
 

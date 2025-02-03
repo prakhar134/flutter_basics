@@ -6,7 +6,7 @@ part of 'todo_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchTodosHash() => r'131b2389891426343970c792c6e64e198376ebd4';
+String _$fetchTodosHash() => r'48e43f5a08dcbe7449d93ffdc5bf5c4a504a909f';
 
 /// See also [fetchTodos].
 @ProviderFor(fetchTodos)
