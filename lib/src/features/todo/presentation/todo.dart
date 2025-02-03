@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import  'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sample/src/features/todo/data/todo_repository.dart';
 import 'package:sample/src/features/todo/domain/todos_model.dart';
 
@@ -24,7 +25,7 @@ class Todo extends ConsumerWidget {
             TextFormField(
               controller: inputController,
               decoration: InputDecoration(
-                hintText: "Type Todo",
+                hintText: "Add to list",
               ),
               onFieldSubmitted: (value) => {
                 if(value != ""){
@@ -74,6 +75,11 @@ class Todo extends ConsumerWidget {
             )
           ],
         )
+      ),
+      floatingActionButton: FloatingActionButton.large(onPressed: () {
+        context.go('/settings');
+      },
+          child: const Icon(Icons.navigate_next)
       ),
     );
   }
